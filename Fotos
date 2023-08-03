@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLbikes - Produtos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>GLbikes</h1>
+        <nav>
+            <ul>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="products.php">Produtos</a></li>
+                <li><a href="contact.php">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Nossos Produtos</h2>
+            <div class="product-list">
+                <?php
+                // Exemplo de produtos fictícios (substitua esses dados pelos seus produtos reais)
+                $products = array(
+                    array(
+                        'name' => 'Bicicleta Urbana Modelo A',
+                        'price' => '1000.00',
+                        'description' => 'Perfeita para passeios urbanos.',
+                        'image' => 'bike_modelo_a.jpg'
+                    ),
+                    array(
+                        'name' => 'Bicicleta de Trilha Modelo B',
+                        'price' => '1500.00',
+                        'description' => 'Ideal para aventuras off-road.',
+                        'image' => 'bike_modelo_b.jpg'
+                    ),
+                    array(
+                        'name' => 'Acessório XYZ',
+                        'price' => '50.00',
+                        'description' => 'Um acessório essencial para sua bicicleta.',
+                        'image' => 'acessorio_xyz.jpg'
+                    )
+                );
+
+                foreach ($products as $product) {
+                    echo '<div class="product">';
+                    echo '<img src="images/' . $product['image'] . '" alt="' . $product['name'] . '">';
+                    echo '<h3>' . $product['name'] . '</h3>';
+                    echo '<p>' . $product['description'] . '</p>';
+                    echo '<p class="price">R$ ' . $product['price'] . '</p>';
+                    echo '</div>';
+                }
+                ?>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 GLbikes. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
